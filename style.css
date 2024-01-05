@@ -1,34 +1,112 @@
-body{
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+:root {
+    --text-color: #a0a0a0;
+    --text-color-400:#acacac;
+}
+
+body {
     min-height: 100vh;
-    background-color: #f5f7f9    ;
+    background-color: #f5f7f9;
+    font-family: system-ui ;
 }
 
-div{
-    background-color: #fff;
-}
-.container{
+
+.container {
     height: 100vh;
-    display:grid; 
-    grid-template-columns: 10rem 1fr 25rem;
-    grid-template-rows: 4rem 1fr;
+    display: grid;
+    grid-template-columns: 15rem 1fr 25rem;
+    grid-template-rows: 5rem 1fr;
+
+    & i {
+        color: var(--text-color);
+        font-size: 1.2rem;
+    }
 }
 
 
+nav {
+    grid-column: 2/ -1;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+
+    & .input-grp {
+        position: relative;
+        & input {
+            width: 20rem;
+            border: transparent;
+            padding: .7rem 1rem;
+            outline: 0;
+            background: #f5f7f9;
+            border-radius: .5rem;
+
+            &::placeholder {
+                color: var(--text-color-400);
+            }
+        }
+        & i{
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+        }
+    }
+
+    & .profile {
+        display: flex;
+        align-items: center;
+        gap: 1.7rem;
+
+        & img {
+            width: 3rem;
+            border-radius: 50%;
+        }
+    }
+
+
+}
 
 #left-aside{
-
+    background: #fff;
     grid-row: 1 / 3;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 1rem;
+    gap: 2rem;
+
+    & ul{
+        list-style: none;
+        margin: 0;
+       
+        padding: 0;
+    
+        display: grid;
+        grid-auto-rows: 3rem;
+        align-items: center;
+        justify-content: center;
+    }
+    & ul li{
+        display: flex;
+        gap: 1rem;
+        color: var(--text-color-400);
+    }
+    
+
 }
 
-nav{
-    grid-column: 2/ -1;
 
+
+#right-aside {
+    background-color: #262648;
 }
 
-main{
-
-
-}
