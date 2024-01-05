@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: #f5f7f9    ;
+}
+
+div{
+    background-color: #fff;
+}
+.container{
+    height: 100vh;
+    display:grid; 
+    grid-template-columns: 10rem 1fr 25rem;
+    grid-template-rows: 4rem 1fr;
+}
+
+
+
+#left-aside{
+
+    grid-row: 1 / 3;
+}
+
+nav{
+    grid-column: 2/ -1;
+
+}
+
+main{
+
+
+}
