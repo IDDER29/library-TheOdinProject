@@ -147,6 +147,9 @@ nav {
 
 main {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .hello-cart {
@@ -181,4 +184,45 @@ main {
     }
 
 
+}
+.library{
+    flex: 1;
+    background: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+
+    background: #fff;
+
+    & .input-grp {
+        position: relative;
+        margin-left: auto;
+
+        & input {
+            width: 20rem;
+            border: 3px solid #f5f7f9;
+            padding: .7rem 1rem;
+            outline: 0;
+    
+            border-radius: .5rem;
+
+            &::placeholder {
+                color: var(--text-color-400);
+            }
+        }
+
+        & i {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+        }
+    }
 }
