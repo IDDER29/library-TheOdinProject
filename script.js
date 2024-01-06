@@ -1,8 +1,16 @@
-const library = document.querySelector('.library-books');
+const imageUpload = document.getElementById('imageUpload');
+const displayDiv = document.getElementById('displayDiv');
 
-for(let i = 0 ; i< 41 ; i++){
+imageUpload.addEventListener('change', event => {
+ const image = event.target.files[0];
+ const reader = new FileReader();
 
-    let div = document.createElement('div')
-    library.appendChild(div)
+ reader.addEventListener('load', () => {
+   localStorage.setItem('image', reader.result);
+   displayDiv.style.backgroundImage = `url(${reader.result})`;
+ });
 
-}
+ if (image) {
+   reader.readAsDataURL(image);
+ }
+});

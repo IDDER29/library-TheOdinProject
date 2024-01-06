@@ -26,30 +26,30 @@
         </nav>
 
         <aside id="left-aside">
-           <div class="left-aside-div">
-            <div class="Logo">
-                <img src="images/logo.png">
-            </div>
-            <div>
-                <ul>
-                    <li> <i class="bi bi-house-door-fill"></i> Home</li>
-                    <li> <i class="bi bi-cursor-fill"></i> Discover</li>
-                    <li> <i class="bi bi-book-fill"></i> Recommandations</li>
-                    <li> <i class="bi bi-bookmark-fill"></i> Whishlist</li>
-                    <li> <i class="bi bi-gear-fill"></i> Settings</li>
-                </ul>
-            </div>
+            <div class="left-aside-div">
+                <div class="Logo">
+                    <img src="images/logo.png">
+                </div>
+                <div>
+                    <ul>
+                        <li> <i class="bi bi-house-door-fill"></i> Home</li>
+                        <li> <i class="bi bi-cursor-fill"></i> Discover</li>
+                        <li> <i class="bi bi-book-fill"></i> Recommandations</li>
+                        <li> <i class="bi bi-bookmark-fill"></i> Whishlist</li>
+                        <li> <i class="bi bi-gear-fill"></i> Settings</li>
+                    </ul>
+                </div>
 
-            <div class="update">
-                <img src="images/update.png">
-                <p>New update available! <br> Click to update</p>
-                <a href="#">Update</a>
+                <div class="update">
+                    <img src="images/update.png">
+                    <p>New update available! <br> Click to update</p>
+                    <a href="#">Update</a>
+                </div>
+
             </div>
-            
-           </div>
         </aside>
 
-        <main >
+        <main>
             <div class="hello-cart">
 
                 <div class="hello">
@@ -59,9 +59,9 @@
                 </div>
 
                 <div class="img">
-                   <img src="images/hello.png" alt="">
+                    <img src="images/hello.png" alt="">
                 </div>
-               
+
             </div>
 
             <div class="library">
@@ -75,24 +75,73 @@
                 <div class="library-books">
 
                     <div id="add">
-
+                        <i class="bi bi-plus-circle"></i>
                     </div>
 
-                    <div></div>
-                   
-                    
+
+
 
                 </div>
-                
+
             </div>
+
         </main>
 
         <aside id="right-aside">
 
         </aside>
 
-        <script src="./script.js"></script>
+
+
     </div>
+
+    <div class="test">
+        <div class="SetInfo">
+
+
+            <div class="uploadImage">
+                <input type="file" id="imageUpload" accept="image/*" />
+                <div id="displayDiv"></div>
+            </div>
+
+            <form action="/submit_book" method="post" class="form-style-5">
+                <fieldset>
+                    <legend>Book Details:</legend>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title">
+
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author">
+
+
+
+                    <label for="genre">Genre:</label>
+                    <select id="genre" name="genre">
+                        <option value="fiction">Fiction</option>
+                        <option value="nonfiction">Non-Fiction</option>
+                        <!-- Add more genres as needed -->
+                    </select>
+
+                    <label for="pages">Number of Pages:</label>
+                    <input type="number" id="pages" name="pages">
+
+                    <label for="currentPage">Current Page:</label>
+                    <input type="number" id="currentPage" name="currentPage">
+                    <label for="status">Status:</label>
+                    <select id="status" name="status">
+                        <option value="notReadYet">Not Read Yet</option>
+                        <option value="inProgress">In Progress</option>
+                        <option value="completedReading">Completed Reading</option>
+                    </select>
+
+                    <input type="submit" value="Submit">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
