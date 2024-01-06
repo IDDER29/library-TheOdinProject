@@ -1,3 +1,11 @@
+function add() {
+    const DisplayAdd = document.querySelector('.Details'); 
+    DisplayAdd.classList.remove('Details-diplay');
+}
+
+
+
+
 const imageUpload = document.getElementById('imageUpload');
 const displayDiv = document.getElementById('displayDiv');
 
