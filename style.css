@@ -144,6 +144,7 @@ nav {
     bottom: 0px;
 
     display: grid;
+    grid-template-columns: minmax(auto, 200px);
     grid-template-rows: auto 1fr auto;
     padding: 1rem 1rem 4rem 1rem;
     gap: 2rem;
@@ -254,9 +255,10 @@ main {
 
     min-height: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    justify-content: space-around;
 
-    grid-auto-rows: 300px;
+    grid-auto-rows: 500px;
     gap: 2rem;
     padding: 2rem;
 }
@@ -284,10 +286,67 @@ main {
 }
 
 .library-books div {
-    background-color: brown;
+    
 }
 
-.test {
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f8f8f8;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card-info {
+    padding: 0px;
+    height: 300px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.3s;
+}
+
+.card:hover .card-info {
+    max-height: 200px; /* This should be higher than what the height could ever reach */
+    padding: 20px;
+    
+}
+
+.card-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+.card-author {
+    margin: 0;
+    font-size: 18px;
+    color: #777;
+}
+
+.card-details {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.Details {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(4.5px);
     -webkit-backdrop-filter: blur(4.5px);
@@ -296,6 +355,10 @@ main {
     width: 100%;
     position: fixed;
     inset: 0;
+}
+
+.Details-diplay{
+    display: none;
 }
 
 .SetInfo {
@@ -398,12 +461,11 @@ main {
 }
 
 .form-style-5 select {
-    -webkit-appearance: menulist-button;
+    
     height: 35px;
 }
 
-.form-style-5 input[type="submit"],
-.form-style-5 input[type="button"] {
+#getinfo {
     position: relative;
     display: block;
     margin: 0 auto;
@@ -413,4 +475,15 @@ main {
     border: none;
     border-radius: 100vmax;
     font-size: 1.1rem;
+}
+
+.svg{
+    position: absolute;
+  right: -20px;
+  top: -15px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
