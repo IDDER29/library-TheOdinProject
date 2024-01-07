@@ -1,152 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
 
-    <link rel="stylesheet" href="./style.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <title>library</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <nav>
+      <nav>
+        <div class="input-grp">
+          <i class="bi bi-search"></i>
+          <input type="search" placeholder="Search your favorite books" />
+        </div>
+        <div class="profile">
+          <i class="bi bi-cart-fill"></i>
+          <i class="bi bi-bell-fill"></i>
+          <img src="images/profile.png" />
+        </div>
+      </nav>
+
+      <aside id="left-aside">
+        <div class="left-aside-div">
+          <div class="Logo">
+            <img src="images/logo.png" />
+          </div>
+          <div>
+            <ul>
+              <li><i class="bi bi-house-door-fill"></i> Home</li>
+              <li><i class="bi bi-cursor-fill"></i> Discover</li>
+              <li><i class="bi bi-book-fill"></i> Recommandations</li>
+              <li><i class="bi bi-bookmark-fill"></i> Whishlist</li>
+              <li><i class="bi bi-gear-fill"></i> Settings</li>
+            </ul>
+          </div>
+
+          <div class="update">
+            <img src="images/update.png" />
+            <p>
+              New update available! <br />
+              Click to update
+            </p>
+            <a href="#">Update</a>
+          </div>
+        </div>
+      </aside>
+
+      <main>
+        <div class="hello-cart">
+          <div class="hello">
+            <h2>Hello User</h2>
+            <p>
+              selection of the best books, <br />
+              just for you
+            </p>
+            <button>Show latest</button>
+          </div>
+
+          <div class="img">
+            <img src="images/hello.png" alt="" />
+          </div>
+        </div>
+
+        <div class="library">
+          <div class="filter">
             <div class="input-grp">
-                <i class="bi bi-search"></i>
-                <input type="search" placeholder="Search your favorite books">
+              <i class="bi bi-search"></i>
+              <input type="search" placeholder="Search your own books" />
             </div>
-            <div class="profile">
-                <i class="bi bi-cart-fill"></i>
-                <i class="bi bi-bell-fill"></i>
-                <img src="images/profile.png">
+          </div>
+
+          <div class="library-books">
+            <div id="add" onclick="toggleAdd()">
+              <i class="bi bi-plus-circle"></i>
             </div>
-        </nav>
+            <div class="card"></div>
+          </div>
+        </div>
+      </main>
 
-        <aside id="left-aside">
-            <div class="left-aside-div">
-                <div class="Logo">
-                    <img src="images/logo.png">
-                </div>
-                <div>
-                    <ul>
-                        <li> <i class="bi bi-house-door-fill"></i> Home</li>
-                        <li> <i class="bi bi-cursor-fill"></i> Discover</li>
-                        <li> <i class="bi bi-book-fill"></i> Recommandations</li>
-                        <li> <i class="bi bi-bookmark-fill"></i> Whishlist</li>
-                        <li> <i class="bi bi-gear-fill"></i> Settings</li>
-                    </ul>
-                </div>
-
-                <div class="update">
-                    <img src="images/update.png">
-                    <p>New update available! <br> Click to update</p>
-                    <a href="#">Update</a>
-                </div>
-
-            </div>
-        </aside>
-
-        <main>
-            <div class="hello-cart">
-
-                <div class="hello">
-                    <h2>Hello User</h2>
-                    <p>selection of the best books, <br> just for you</p>
-                    <button>Show latest</button>
-                </div>
-
-                <div class="img">
-                    <img src="images/hello.png" alt="">
-                </div>
-
-            </div>
-
-            <div class="library">
-                <div class="filter">
-                    <div class="input-grp">
-                        <i class="bi bi-search"></i>
-                        <input type="search" placeholder="Search your own books">
-                    </div>
-                </div>
-
-                <div class="library-books">
-
-                    <div id="add" onclick="toggleAdd()">
-                        <i class="bi bi-plus-circle"></i>
-                    </div>
-
-                    
-
-
-
-
-                </div>
-
-            </div>
-
-        </main>
-
-        <aside id="right-aside">
-
-        </aside>
-
-
-
+      <aside id="right-aside"></aside>
     </div>
 
     <div class="Details Details-diplay">
-        <div class="SetInfo">
-
-            <div class="uploadImage">
-                <div class="upload-btn-wrapper">
-                    <button class="btn">Upload a file</button>
-                    <input type="file" id="imageUpload" accept="image/*" name="myfile"/>
-                  </div>
-                <div id="displayDiv"></div>
-            </div>
-
-            <form class="form-style-5">
-                <fieldset>
-                    <legend>Book Details:</legend>
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" required>
-
-                    <label for="author">Author:</label>
-                    <input type="text" id="author" name="author" required>
-
-
-
-                    <label for="genre">Genre:</label>
-                    <select id="genre" name="genre" required>
-                        <option value="fiction">Fiction</option>
-                        <option value="nonfiction">Non-Fiction</option>
-                        <!-- Add more genres as needed -->
-                    </select>
-
-                    <label for="pages">Number of Pages:</label>
-                    <input type="number" id="pages" name="pages" required>
-
-                    <label for="currentPage">Current Page:</label>
-                    <input type="number" id="currentPage" name="currentPage">
-                    <label for="status">Status:</label>
-                    <select id="status" name="status" required>
-                        <option value="notReadYet">Not Read Yet</option>
-                        <option value="inProgress">In Progress</option>
-                        <option value="completedReading">Completed Reading</option>
-                    </select>
-
-                    <button type="button" id="getinfo">Submit</button>
-                </fieldset>
-            </form>
-            <div class="svg" onclick="toggleAdd()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="40" height="40"><path d="M1.757 10.243a6.001 6.001 0 1 1 8.488-8.486 6.001 6.001 0 0 1-8.488 8.486ZM6 4.763l-2-2L2.763 4l2 2-2 2L4 9.237l2-2 2 2L9.237 8l-2-2 2-2L8 2.763Z"></path></svg></div>
+      <div class="SetInfo">
+        <div class="uploadImage">
+          <div class="upload-btn-wrapper">
+            <button class="btn">Upload a file</button>
+            <input
+              type="file"
+              id="imageUpload"
+              accept="image/*"
+              name="myfile"
+            />
+          </div>
+          <div id="displayDiv"></div>
         </div>
+
+        <form id="form" class="form-style-5">
+          <fieldset>
+            <legend>Book Details:</legend>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required />
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required />
+
+            <label for="genre">Genre:</label>
+            <select id="genre" name="genre" required>
+              <option value="fiction">Fiction</option>
+              <option value="non fiction">Non Fiction</option>
+              <!-- Add more genres as needed -->
+            </select>
+
+            <label for="pages">Number of Pages:</label>
+            <input type="number" id="pages" name="pages" required />
+
+            <label for="currentPage">Current Page:</label>
+            <input type="number" id="currentPage" name="currentPage" />
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+              <option value="not Read Yet">Not Read Yet</option>
+              <option value="in Progress">In Progress</option>
+              <option value="completed Reading">Completed Reading</option>
+            </select>
+
+            <button type="button" id="getinfo">Submit</button>
+          </fieldset>
+        </form>
+        <div class="svg" onclick="toggleAdd()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 12 12"
+            width="40"
+            height="40"
+          >
+            <path
+              d="M1.757 10.243a6.001 6.001 0 1 1 8.488-8.486 6.001 6.001 0 0 1-8.488 8.486ZM6 4.763l-2-2L2.763 4l2 2-2 2L4 9.237l2-2 2 2L9.237 8l-2-2 2-2L8 2.763Z"
+            ></path>
+          </svg>
+        </div>
+      </div>
     </div>
 
-
     <script src="./script.js"></script>
-</body>
-
+  </body>
 </html>
