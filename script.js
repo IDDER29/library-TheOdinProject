@@ -33,7 +33,7 @@ let books = [
     genre: "Software Engineering",
     pages: "464",
     currentPage: "Depends on your reading progress",
-    status: "not Read Yet",
+    status: "Not Read Yet",
     bgImageUrl: "./images/cleanCode_cover.jpg",
   },
   {
@@ -43,7 +43,7 @@ let books = [
     genre: "Web Development",
     pages: "768",
     currentPage: "Depends on your reading progress",
-    status: "in Progress",
+    status: "In Progress",
     bgImageUrl: "./images/htmlAndCss_cover.jpg",
   },
   {
@@ -52,7 +52,7 @@ let books = [
     genre: "Programming",
     pages: "472",
     currentPage: "Depends on your reading progress",
-    status: "not Read Yet",
+    status: "Not Read Yet",
     bgImageUrl: "./images/eloquentjavascript_cover.jpg",
   },
 ];
@@ -212,19 +212,19 @@ function readBook(event) {
     // Retrieve the value of the data-indexd attribute
     // Note: dataset properties are in camelCase, so data-indexd becomes dataIndexd
 
-    let bookIndex = parseInt(button.dataset.indexr, 10); // Parse it to an integer
+   let bookIndex = parseInt(button.dataset.indexr, 10); // Parse it to an integer
 
-    // Check if the book at the index position still exists in the books array
-    if ((books[bookIndex].status == 'in Progress') || (books[bookIndex].status == 'not Read Yet') ) {
-      // Remove the element at the index position from the books array
-      
-      books[bookIndex].status = 'completed Reading';
-    
-    }else{
-      books[bookIndex].status = 'in Progress';
-    }
+    // Define the statuses and their sequence
+    const statuses = ['Not Read Yet', 'In Progress', 'Completed Reading'];
+    // Retrieve current status index
+    const currentStatusIndex = statuses.indexOf(books[bookIndex].status);
+    // Calculate the next status index with wrap-around
+    const nextStatusIndex = (currentStatusIndex + 1) % statuses.length;
+    // Set the next status
+    books[bookIndex].status = statuses[nextStatusIndex];
     // Do something with the updated books array, such as updating the UI or the storage
     displaysEachBook(books);
+    
     
     
   }
